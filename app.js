@@ -1,3 +1,25 @@
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDNsn2wZO-kIt9iXLaDaksTo7yJZZF8M-s",
+  authDomain: "studentmanagementapp-c346c.firebaseapp.com",
+  projectId: "studentmanagementapp-c346c",
+  storageBucket: "studentmanagementapp-c346c.firebasestorage.app",
+  messagingSenderId: "465454039054",
+  appId: "1:465454039054:web:146144bb02b1a6b5b77c5f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+
+
+
 var newMemberAddBtn = document.querySelector('.addMemberBtn'),
 darkBg = document.querySelector('.dark_bg'),
 popupForm = document.querySelector('.popup'),
