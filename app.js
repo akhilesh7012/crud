@@ -502,3 +502,28 @@ filterData.addEventListener("input", ()=> {
 
 displayIndexBtn()
 
+
+const form = document.getElementById('form');
+const dataList = document.getElementById('data-list');
+
+// Save data to Firestore
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  const name = document.getElementById('name').value;
+  
+  db.collection("forms").add({ name: name })
+    .then(() => form.reset())
+    .catch((error) => console.error("Error writing document: ", error));
+});
+
+// Load data from Firestore
+function loadData() {
+  db.collection("forms").onSnapshot((querySnapshot) => {
+    dataList.innerHTML = "";
+    querySnapshot.forEach((doc) => {
+      dataList.innerHTML += `<div>${doc.data().name}</div>`;
+    });
+  });
+}
+
+loadData(); // Initial load
